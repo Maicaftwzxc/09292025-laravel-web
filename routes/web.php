@@ -2,58 +2,22 @@
 
 use Illuminate\Support\Arr;     
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/genre', function () {
-    return view('genre', [ 
-        'genres' => [
-            [
-                'id' => 1,
-                'category' => 'Ballad',
-            ],
-            [
-                'id' => 2,
-                'category' => 'Rock'
-            ],
-            [
-                'id' => 3,
-                'category' => 'Pop'
-            ],
-            [
-                'id' => 4,
-                'category' => 'HipHop'
-            ],
-        ]
-        
+Route::get('/jobs', function ()  {
+    return view('jobs', [
+        'jobs' => Job::all()
     ]);
 });
 
-Route::get('/genre/{id}', function ($id) {
-        $genres =  [
-            [
-                'id' => 1,
-                'category' => 'Ballad',
-            ],
-            [
-                'id' => 2,
-                'category' => 'Rock'
-            ],
-            [
-                'id' => 3,
-                'category' => 'Pop'
-            ],
-            [
-                'id' => 4,
-                'category' => 'HipHop'
-            ],
-        ];
-
-       $genre = Arr::first($genres, fn($genre) => $genre['id'] == $id);
-        
-       return view('genre-details', ['genre' => $genre]);
+Route::get('/jobs/{id}', function ($id) {
+    $job = Job::find($id);
+       
+    return view('job', ['job' => $job]);
 });
 
 Route::get('/contact', function () {
