@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs.index', function ()  {
-    $jobs = Job::with('employer')->paginate(10);
+    $jobs = Job::with('employer')->paginate(3);
    
     return view('jobs.index', [
         'jobs' => $jobs
