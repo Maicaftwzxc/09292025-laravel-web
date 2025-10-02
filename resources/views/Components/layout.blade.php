@@ -7,7 +7,7 @@
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="h-full">
+<body class="h-full bg-[url('https://img.freepik.com/free-photo/paper-background_53876-147734.jpg')] h-screen w-full bg-cover">
     
 <div class="min-h-full">
   <nav class="bg-orange-900/70">
@@ -15,13 +15,13 @@
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="shrink-0">
-            <img src="https://cdn-icons-png.flaticon.com/128/1436/1436690.png" alt="Your Company" class="size-8" />
+            <img src="https://cdn-icons-png.flaticon.com/128/1436/1436690.png" alt="Your Company" class="size-10" />
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4 text-white">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                 <x-nav-link href="/" :active="request()->is('/')">Home</a></x-nav-link>
-                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</a></x-nav-link>
+                <x-nav-link href="/jobs.index" :active="request()->is('jobs.index')">Jobs</a></x-nav-link>
                 <x-nav-link href="/contact" :active="request()->is('contact')">Contact</a></x-nav-link>
               
             </div>
@@ -42,7 +42,7 @@
               <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">Open user menu</span>
-                <img src="https://bookingagentinfo.com/wp-content/uploads/2024/03/ab6761610000e5ebd95cf4457fac4cc62311f84f.jpg" alt="" class="size-8 rounded-full outline -outline-offset-1 outline-white/10" />
+                <img src="https://bookingagentinfo.com/wp-content/uploads/2024/03/ab6761610000e5ebd95cf4457fac4cc62311f84f.jpg" alt="" class="size-11 rounded-full outline -outline-offset-1 outline-white/10" />
               </button>
             </el-dropdown>
           </div>
@@ -67,7 +67,7 @@
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
         <a href="/" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
-        <a href="/jobs" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Jobs</a>
+        <a href="/jobs.index" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Jobs</a>
         <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
       </div>
       <div class="border-t border-white/10 pt-4 pb-3">
