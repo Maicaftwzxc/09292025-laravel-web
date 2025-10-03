@@ -7,7 +7,7 @@
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="h-full bg-[url('https://img.freepik.com/free-photo/paper-background_53876-147734.jpg')] h-screen w-full bg-cover">
+<body class="bg-[url('https://img.freepik.com/free-photo/paper-background_53876-147734.jpg')] min-h-screen w-full bg-cover bg-fixed">
     
 <div class="min-h-full">
   <nav class="bg-orange-900/70">
@@ -94,6 +94,12 @@
   <header class="relative bg-white shadow-sm">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+      
+      <!-- Button component usage -->
+      <div class="absolute top-5 right-15">
+      <x-button href="/jobs.create">Post a Job</x-button>
+      </div>
+      
     </div>
   </header>
 
